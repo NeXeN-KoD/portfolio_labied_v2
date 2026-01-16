@@ -1,5 +1,18 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Folder, Award } from "lucide-react";
+import { ExternalLink, Award } from "lucide-react";
+import covoiturageImg from "@/assets/covoiturage.jpg";
+import IoTimg from "@/assets/IoT.png";
+import WISEImg from "@/assets/WISE.jpg";
+import PLImg from "@/assets/PlatformeLocation.jpg";
+import BLImg from "@/assets/BlockChain.jpeg";
+import SuiviMarcheImg from "@/assets/AngularProjetMarche.jpeg";
+import DOImg from "@/assets/DevopsOrch.jpg";
+import AppTachesImg from "@/assets/AppTaches.jpeg";
+
+// NOTE: Pour utiliser vos propres images :
+// 1. Mettez vos images dans le dossier src/assets/
+// 2. Importez-les ici
+// 3. Remplacez les liens URL ci-dessous par vos variables importées
 
 const projects = [
   {
@@ -7,37 +20,50 @@ const projects = [
     description: "Application web (administration) et mobile (clients/conducteurs)",
     tech: ["Spring Boot", "React.js", "React Native"],
     featured: false,
+    image: PLImg, 
   },
   {
     title: "DevOps & Orchestration",
     description: "Automatisation du déploiement d'une application web 3-tiers conteneurisée",
     tech: ["Kubernetes", "Ansible", "Docker"],
     featured: false,
+    image: DOImg
   },
   {
     title: "Gestion de Tâches Mobile",
     description: "Application mobile de productivité temps réel",
     tech: ["React Native", "Firebase"],
     featured: false,
+    image: AppTachesImg,
   },
   {
     title: "Système IoT & Cloud",
     description: "Système de contrôle d'accès par barrière RFID avec remontée de données Cloud",
     tech: ["C++", "Python", "Node.js", "RFID"],
     featured: false,
+    image: IoTimg,
   },
   {
     title: "Plateforme de Suivi des Marchés",
     description: "Tableau de bord interactif pour la visualisation des données de marché",
     tech: ["Angular", "TypeScript", "PostgreSQL"],
     featured: false,
+    image: SuiviMarcheImg,
+  },
+    {
+    title: "Vote électronique Blockchain Privée (React.js, Hyperledger Besu, ngrok)",
+    description: "Système de vote décentralisé, sécurisé et transparent sur blockchain privée.",
+    tech: ["React.js", "Hyperledger Besu", "ngrok"],
+    featured: false,
+    image: BLImg,
   },
   {
     title: "Système Intelligent de Sécurité Routière",
     description: "Solution innovante pour la prévention des accidents (Collision faune/véhicule)",
-    tech: ["IoT", "Intelligence Artificielle", "Capteurs"],
+    tech: ["IoT", "IA", "Capteurs"],
     featured: true,
     isBrevet: true,
+    image: WISEImg,
   },
 ];
 
@@ -70,40 +96,52 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`group relative glass rounded-xl p-6 hover:border-primary/50 transition-all duration-300 ${
+              className={`group relative glass rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 ${
                 project.isBrevet ? "border-gradient" : ""
               }`}
             >
+              {/* Badge Brevet */}
               {project.isBrevet && (
-                <div className="absolute -top-3 -right-3 bg-gradient-to-r from-primary to-accent text-primary-foreground px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
+                <div className="absolute top-3 right-3 z-10 bg-gradient-to-r from-primary to-accent text-primary-foreground px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1 shadow-lg">
                   <Award className="w-3 h-3" />
                   Brevet
                 </div>
               )}
-              
-              <div className="flex items-start justify-between mb-4">
-                <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                  <Folder className="w-5 h-5 text-primary" />
-                </div>
-                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+
+              {/* Zone Image */}
+              <div className="relative h-48 w-full overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               </div>
 
-              <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">
-                {project.title}
-              </h3>
-              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                {project.description}
-              </p>
+              {/* Zone Contenu */}
+              <div className="p-6">
+                <div className="flex items-start justify-between mb-4">
+                  {/* MODIFICATION ICI : J'ai retiré 'line-clamp-1' pour afficher tout le titre */}
+                  <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 ml-2 mt-1" />
+                </div>
 
-              <div className="flex flex-wrap gap-2">
-                {project.tech.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="text-xs font-mono px-2 py-1 bg-secondary rounded-md text-muted-foreground"
-                  >
-                    {tech}
-                  </span>
-                ))}
+                <p className="text-sm text-muted-foreground mb-4 leading-relaxed line-clamp-3">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {project.tech.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="text-xs font-mono px-2 py-1 bg-secondary rounded-md text-muted-foreground"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}

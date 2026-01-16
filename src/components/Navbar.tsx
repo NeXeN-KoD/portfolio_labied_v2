@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { href: "#about", label: "À Propos" },
+  { href: "#", label: "À Propos" },
   { href: "#experience", label: "Expérience" },
   { href: "#projects", label: "Projets" },
   { href: "#skills", label: "Compétences" },

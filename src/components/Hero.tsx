@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Download, Github, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, CheckCircle2 } from "lucide-react";
 import profileImg from "@/assets/profile.jpg";
 
 const Hero = () => {
@@ -18,6 +18,20 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="order-2 md:order-1"
           >
+            {/* BADGE DE DISPONIBILITÉ */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-500 text-xs font-medium mb-6"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+              </span>
+              Disponible pour Stage PFE
+            </motion.div>
+
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -43,18 +57,29 @@ const Hero = () => {
               transition={{ delay: 0.4 }}
               className="text-xl md:text-2xl text-muted-foreground mb-6"
             >
-              Développeur Fullstack & Innovateur
+              Ingénieur Logiciel Fullstack | Cloud & DevOps
             </motion.p>
             
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="text-muted-foreground mb-8 max-w-md leading-relaxed"
+              className="mb-8 max-w-lg leading-relaxed space-y-4"
             >
-              Étudiant en 5ème année à l'UIR, passionné par le développement Fullstack 
-              et l'architecture logicielle. Auteur d'un brevet d'invention.
-            </motion.p>
+              <p className="text-muted-foreground">
+                Élève-Ingénieur en 5ème année à l'UIR, spécialisé en architecture logicielle, 
+                virtualisation et solutions Cloud. Auteur d'un brevet d'invention.
+              </p>
+              
+              {/* MODIFICATION ICI : Ajout de "ou pré-embauche" */}
+              <div className="flex gap-3 p-4 rounded-lg bg-secondary/50 border border-secondary">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <p className="text-sm text-foreground/90 font-medium">
+                  Actuellement à la recherche d'un <span className="text-primary">stage PFE ou pré-embauche</span> en développement Fullstack. 
+                  Je suis disponible pour discuter de toute opportunité.
+                </p>
+              </div>
+            </motion.div>
 
             {/* Contact info */}
             <motion.div
@@ -105,10 +130,10 @@ const Hero = () => {
               transition={{ delay: 0.8 }}
               className="flex gap-4 mt-8"
             >
-              <a href="#" className="p-3 glass rounded-lg hover:glow-primary transition-all duration-300">
+              <a href="https://github.com/votre-username" target="_blank" rel="noopener noreferrer" className="p-3 glass rounded-lg hover:glow-primary transition-all duration-300">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="#" className="p-3 glass rounded-lg hover:glow-primary transition-all duration-300">
+              <a href="https://linkedin.com/in/votre-profil" target="_blank" rel="noopener noreferrer" className="p-3 glass rounded-lg hover:glow-primary transition-all duration-300">
                 <Linkedin className="w-5 h-5" />
               </a>
             </motion.div>
@@ -130,7 +155,6 @@ const Hero = () => {
                   className="w-full h-full object-cover rounded-full"
                 />
               </div>
-              {/* Floating badge */}
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}

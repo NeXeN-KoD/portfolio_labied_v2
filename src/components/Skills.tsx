@@ -27,7 +27,8 @@ const languages = [
   { name: "Arabe", level: "Langue maternelle", percent: 100 },
   { name: "Français", level: "Courant", percent: 90 },
   { name: "Anglais", level: "Technique / Courant", percent: 85 },
-  { name: "Espagnol", level: "Intermédiaire", percent: 40 },
+  { name: "Espagnol", level: "Niveau A2 (Élémentaire)", percent: 30 },
+  { name: "Allemand", level: "Niveau B1 (Intermédiaire)", percent: 50 },
 ];
 
 const Skills = () => {

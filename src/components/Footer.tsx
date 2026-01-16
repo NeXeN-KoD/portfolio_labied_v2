@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container max-w-6xl mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2025 Abderrahmane LABIED. Tous droits réservés.
+            © 2026 Abderrahmane LABIED. Tous droits réservés.
           </p>
           
           <div className="flex items-center gap-4">
