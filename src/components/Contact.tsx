@@ -65,7 +65,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground mb-1">Localisation</p>
-                  <p className="font-medium">Sala Al Jadida, Maroc</p>
+                  <p className="font-medium">Maroc</p>
                 </div>
               </div>
             </div>

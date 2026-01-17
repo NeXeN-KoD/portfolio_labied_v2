@@ -98,7 +98,7 @@ const Hero = () => {
               </a>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary" />
-                <span className="text-sm">Sala Al Jadida, Maroc</span>
+                <span className="text-sm">Maroc</span>
               </div>
             </motion.div>
 
