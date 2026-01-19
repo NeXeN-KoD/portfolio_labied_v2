@@ -9,6 +9,7 @@ import SuiviMarcheImg from "@/assets/AngularProjetMarche.jpeg";
 import DOImg from "@/assets/DevopsOrch.jpg";
 import AppTachesImg from "@/assets/AppTaches.jpeg";
 import DOImg2 from "@/assets/DevOrch.jpg";
+import CloudImg from "@/assets/CloudP.jpeg";
 
 // NOTE: Pour utiliser vos propres images :
 // 1. Mettez vos images dans le dossier src/assets/
@@ -66,6 +67,13 @@ const projects = [
     isBrevet: true,
     image: WISEImg,
   },
+    {
+    title: "Application MLOps de Prédiction Météorologique",
+    description: "Pipeline de prévision météo conteneurisé, sécurisé et déployé sur le Cloud avec monitoring et visualisation BI.",
+    tech: ["Azure Web Apps", "Docker", "Power BI", "Microsoft Entra ID", "Random Forest"],
+    featured: false,
+    image: CloudImg,
+  }
 ];
 
 const Projects = () => {
