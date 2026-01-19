@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Award } from "lucide-react";
-import covoiturageImg from "@/assets/covoiturage.jpg";
+import covoiturageImg from "@/assets/CovoiturageProjet.jpg";
 import IoTimg from "@/assets/IoT.png";
 import WISEImg from "@/assets/WISE.jpg";
 import PLImg from "@/assets/PlatformeLocation.jpg";
@@ -22,7 +22,7 @@ const projects = [
     description: "Application web (administration) et mobile (clients/conducteurs)",
     tech: ["Spring Boot", "React.js", "React Native"],
     featured: false,
-    image: PLImg, 
+    image: covoiturageImg, 
   },
   {
     title: "DevOps & Orchestration",
