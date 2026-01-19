@@ -8,6 +8,7 @@ import BLImg from "@/assets/BlockChain.jpeg";
 import SuiviMarcheImg from "@/assets/AngularProjetMarche.jpeg";
 import DOImg from "@/assets/DevopsOrch.jpg";
 import AppTachesImg from "@/assets/AppTaches.jpeg";
+import DOImg2 from "@/assets/DevOrch.jpg";
 
 // NOTE: Pour utiliser vos propres images :
 // 1. Mettez vos images dans le dossier src/assets/
@@ -27,7 +28,7 @@ const projects = [
     description: "Automatisation du déploiement d'une application web 3-tiers conteneurisée",
     tech: ["Kubernetes", "Ansible", "Docker"],
     featured: false,
-    image: DOImg
+    image: DOImg2
   },
   {
     title: "Gestion de Tâches Mobile",
