@@ -57,7 +57,7 @@ const Hero = () => {
                   transition={{ delay: 0.4 }}
                   className="text-xl md:text-2xl text-muted-foreground mb-6"
               >
-                Ingénieur Logiciel Fullstack & DevOps
+                Ingénieur Logiciel | Software Engineer
               </motion.p>
 
               <motion.div
@@ -67,7 +67,7 @@ const Hero = () => {
                   className="mb-8 max-w-lg leading-relaxed space-y-4"
               >
                 <p className="text-muted-foreground">
-                  Ingénieur en Génie Logiciel de l'UIR, inventeur breveté et passionné par les architectures Fullstack et DevOps. Ayant validé mon cycle d'ingénieur, je suis rigoureux et curieux de relever de nouveaux défis techniques.
+                  Ingénieur en Génie Logiciel diplômé de l'UIR et inventeur breveté. Passionné par la conception de systèmes intelligents et l'innovation technologique, j'aborde l'ingénierie avec une vision globale. De la création de prototypes rapides à la mise en production d'architectures distribuées, j'aime transformer des défis complexes en solutions logicielles concrètes, fiables et scalables."
                 </p>
 
                 <div className="flex gap-3 p-4 rounded-lg bg-secondary/50 border border-secondary">
